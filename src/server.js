@@ -7,7 +7,7 @@ app.use(express.json());
 const notFoundHandler =require('./error-handlers/404');
 const errorHandler =require('./error-handlers/500');
 const loggerMeddleware =require('./middleware/logger');
-const nameValidator= require('./middleware/validator');
+const Validator= require('./middleware/validator');
 
 
 app.use(errorHandler);
@@ -18,9 +18,9 @@ res.send(`hey this is from query, ${req.query.name}, ${req.query.age}`)
 
 })
 
-app.get("/person", nameValidator, (req, res) => {
+app.get("/person", Validator, (req, res) => {
     const name = req.query.name;
-    res.json({
+    res.send({
       name:name
     });
   });
@@ -42,7 +42,7 @@ res.send(`hello just post body, ${req.body.name}`);
 
 
 app.use(loggerMeddleware);
-app.use(nameValidator);
+app.use(Validator);
 
 
 module.exports={
