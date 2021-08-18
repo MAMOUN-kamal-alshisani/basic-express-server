@@ -20,7 +20,7 @@ res.send(`hey this is from query, ${req.query.name}, ${req.query.age}`)
 
 app.get("/person", Validator, (req, res) => {
     const name = req.query.name;
-    res.send({
+    res.json({
       name:name
     });
   });
