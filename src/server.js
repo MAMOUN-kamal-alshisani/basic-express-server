@@ -10,11 +10,15 @@ const loggerMeddleware =require('./middleware/logger');
 const Validator= require('./middleware/validator');
 
 
-app.use(errorHandler);
+app.get('/',(req,res)=>{
+
+  res.send(`allgood :)`)
+  
+  })
 
 app.get('/person',(req,res)=>{
 
-res.send(`hey this is from query, ${req.query.name}, ${req.query.age}`)
+res.send(`hey this is from query, ${req.query.name}`)
 
 })
 
@@ -55,5 +59,5 @@ app.listen(port, ()=>{console.log(`server is listening on port ${port}`);})
 }
 
 }
-
+app.use(errorHandler);
 app.use('*',notFoundHandler);
