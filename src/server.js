@@ -14,7 +14,7 @@ app.use(errorHandler);
 
 app.get('/person',(req,res)=>{
 
-res.send(`hey this is from query, ${req.query.name}, ${req.query.age}`)
+res.send(`hey this is from query, ${req.query.name}`)
 
 })
 
