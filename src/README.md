@@ -2,7 +2,7 @@
 
 ## deployed:
 
-https://basic-express-server-me.herokuapp.com/
+https://basic-api-serverme.herokuapp.com/
 
 
 ## port =3000
